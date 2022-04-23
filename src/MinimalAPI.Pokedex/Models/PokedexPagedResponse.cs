@@ -1,8 +1,3 @@
 ﻿namespace MinalAPI.Pokedex.Models;
 
-public class PokedexPagedResponse : PokedexResponse
-{
-    public int Page { get; set; }
-    public int TotalPages { get; set; }
-    public int TotalResults { get; set; }
-}
+public record PokedexPagedResponse(int Page, int TotalPages, int TotalResults, List<PokemonListItemEntity> Data) : PokedexResponse(Data);
